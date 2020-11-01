@@ -23,7 +23,11 @@ WHERE hire_date >= '1986-01-01' and hire_date <= '1986-12-30';
 
 
 -- List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
-
+SELECT employeesHK.first_name,
+employeesHK.last_name, 
+employeesHK.sex
+FROM employeeshk
+WHERE first_name = 'Hercules' and last_name LIKE 'B%'
 
 -- List all employees in the Sales department, including their employee number, last name, first name, and department name.
 
