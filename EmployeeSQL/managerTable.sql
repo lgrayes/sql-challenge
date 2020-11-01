@@ -56,3 +56,27 @@ FROM dept_emphk
 INNER JOIN employeeshk ON employeeshk.emp_no=dept_emphk.emp_no
 INNER JOIN departmentshk ON departmentshk.dept_no=dept_emphk.dept_no;
 
+-- List all employees in the Sales department, including their 
+-- employee number, 
+-- last name, first name, and department name.
+
+SELECT employeeshk.emp_no,
+employeeshk.last_name, 
+employeeshk.first_name,
+departmentshk.dept_name
+FROM dept_emphk
+INNER JOIN employeeshk ON employeeshk.emp_no=dept_emphk.emp_no
+INNER JOIN departmentshk ON departmentshk.dept_no=dept_emphk.dept_no
+where dept_emphk.dept_no = 'd007';
+
+-- List all employees in the Sales and Development departments
+SELECT employeeshk.emp_no,
+employeeshk.last_name, 
+employeeshk.first_name,
+departmentshk.dept_name
+FROM dept_emphk
+INNER JOIN employeeshk ON employeeshk.emp_no=dept_emphk.emp_no
+INNER JOIN departmentshk ON departmentshk.dept_no=dept_emphk.dept_no
+where dept_emphk.dept_no = 'd007' or dept_emphk.dept_no = 'd005';
+
+

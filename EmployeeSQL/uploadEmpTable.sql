@@ -13,6 +13,7 @@ CREATE TABLE employeeshk (
 
 SELECT * FROM employeeshk;
 
+
 CREATE TABLE salarieshk (
 emp_no varchar,
 salary int,
@@ -58,3 +59,13 @@ dept_name varchar
 );
 
 select * from departmentshk
+
+-- In descending order, list the frequency count of employee last names, i.e., 
+-- how many employees share each last name.
+
+SELECT last_name FROM employeeshk;
+
+SELECT last_name, COUNT(last_name) AS "last_name count"
+FROM employeeshk
+GROUP BY last_name
+ORDER BY "last_name count" DESC;
